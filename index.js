@@ -1,16 +1,17 @@
 var express=require('express');
-var bodyparser=require('body-parser');
+// var bodyparser=require('body-parser');
+var bodyparser=require('body-parser')
 let app=express();
 
-app.use(bodyparser.json);
+app.use(bodyparser.json());
 
 app.get('/',function(req,res){
 let jsondata=req.body;
 let jsonstring=JSON.stringify(jsondata);
 
-res.body(jsonstring);
+res.send(jsonstring);
 })
 
-app.listen(3297,function(){
+app.listen(329,function(){
     console.log("success");
 })
